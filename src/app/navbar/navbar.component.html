@@ -1,0 +1,41 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav
+    #drawer
+    class="sidenav"
+    fixedInViewport="true"
+    [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+    [mode]="(isHandset$ | async) ? 'over' : 'side'"
+    [opened]="!(isHandset$ | async)">
+    <mat-toolbar color="warn">Menu</mat-toolbar>
+    <mat-nav-list>
+      <a mat-list-item [routerLink]="['']" routerLinkActive="router-link-active" >Home</a>
+      <a mat-list-item [routerLink]="['/resume']">Resume</a>
+      <a mat-list-item [routerLink]="['/aboutme']">About Me</a>
+      <a mat-list-item [routerLink]="['/projects']">Projects</a>
+      <a mat-list-item [routerLink]="['/contacts']">Contacts</a>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar color="warn">
+      <button
+        type="button"
+        aria-label="Toggle sidenav"
+        mat-icon-button
+        (click)="drawer.toggle()"
+        >
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
+      <span>Personal Portfolio</span> 
+      <nav mat-tab-nav-bar>
+        <a mat-tab-link [routerLink]="['/']">Home</a>
+        <a mat-tab-link [routerLink]="['/resume']">Resume</a>
+        <a mat-tab-link [routerLink]="['/aboutme']">Aboutme</a>
+        <a mat-tab-link [routerLink]="['/projects']">Projects</a>
+        <a mat-tab-link [routerLink]="['/contacts']">Contacts</a>
+      </nav>     
+    </mat-toolbar>
+    <!-- Add Content Here --> 
+  
+  </mat-sidenav-content>
+</mat-sidenav-container>
+

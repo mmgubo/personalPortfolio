@@ -1,0 +1,11 @@
+#navbar{
+  vertical-align: middle;
+}
+.example-fill-remaining-space {
+   /* This fills the remaining space, by using flexbox. 
+      Every toolbar row uses a flexbox row layout. */
+   flex: 1 1 auto;
+}
+.mat-tab-group{
+  float: right; /* align items in Main Axis */
+}
